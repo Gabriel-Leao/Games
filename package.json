@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port 4210",
+    "build": "ng build --configuration production --aot",
+    "build:prod": "npm run build",
+    "build:hml": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --c hom --build-optimizer --aot",
+    "build:dev": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --c development --build-optimizer --aot",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
