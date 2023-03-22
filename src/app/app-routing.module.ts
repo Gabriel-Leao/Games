@@ -9,8 +9,8 @@ import { DeleteComponent } from './pages/delete/delete.component';
 const routes: Routes = [
   { path: '', redirectTo: '/games', pathMatch: 'full' },
   { path: 'games', component: GamesComponent },
+  { path: 'game/new', component: NewGameComponent },
   { path: 'game/:id', component: GameComponent },
-  { path: 'newGame', component: NewGameComponent },
   { path: 'game/edit/:id', component: EditComponent },
   { path: 'game/delete/:id', component: DeleteComponent },
 ];

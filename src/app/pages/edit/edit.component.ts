@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IGame } from 'src/app/interface/games';
 import { GamesService } from 'src/app/services/games.service';
 
@@ -12,14 +12,15 @@ import { GamesService } from 'src/app/services/games.service';
 export class EditComponent implements OnInit {
   constructor(
     private gameService: GamesService,
-    private route: ActivatedRoute,
+    private route: Router,
+    private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder
   ) {}
 
   game: IGame;
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id')!;
+    const id = +this.activatedRoute.snapshot.paramMap.get('id')!;
     this.gameService.getOne(id).subscribe({
       next: (data: IGame) => {
         this.game = data;
@@ -64,6 +65,11 @@ export class EditComponent implements OnInit {
     }
 
     this.gameService.updateGame(game).subscribe({
+      next: () => {
+        setTimeout(() => {
+          this.route.navigate(['games']);
+        }, 3000);
+      },
       error: (error) => console.error(error),
     });
     this.updateForm.reset();
