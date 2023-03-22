@@ -8,9 +8,12 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { GamesComponent } from './pages/games/games.component';
 import { GameComponent } from './pages/game/game.component';
+import { NewGameComponent } from './pages/new-game/new-game.component';
+import { EditComponent } from './pages/edit/edit.component';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, GamesComponent, GameComponent],
+  declarations: [AppComponent, CardComponent, GamesComponent, GameComponent, NewGameComponent, EditComponent, DeleteComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
