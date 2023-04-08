@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm" *ngIf="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email"></label>
+    <input type="email" name="email" id="email" formControlName="email" placeholder="teste@email.com">
+  </div>
+  <div>
+    <label for="password"></label>
+    <input type="password" name="password" id="password" formControlName="password" placeholder="********">
+  </div>
+  <div>
+    <button class="button" type="submit">Entrar</button>
+  </div>
+</form>

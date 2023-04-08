@@ -11,9 +11,10 @@ import { GameComponent } from './pages/game/game.component';
 import { NewGameComponent } from './pages/new-game/new-game.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { DeleteComponent } from './pages/delete/delete.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, CardComponent, GamesComponent, GameComponent, NewGameComponent, EditComponent, DeleteComponent],
+  declarations: [AppComponent, CardComponent, GamesComponent, GameComponent, NewGameComponent, EditComponent, DeleteComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
