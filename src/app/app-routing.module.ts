@@ -6,6 +6,7 @@ import { NewGameComponent } from './pages/new-game/new-game.component';
 import { EditComponent } from './pages/edit/edit.component';
 import { DeleteComponent } from './pages/delete/delete.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NewUserComponent } from './pages/new-user/new-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/games', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'game/:id', component: GameComponent },
   { path: 'game/edit/:id', component: EditComponent },
   { path: 'game/delete/:id', component: DeleteComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'user/login', component: LoginComponent },
+  { path: 'user/new', component: NewUserComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
